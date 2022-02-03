@@ -5,8 +5,15 @@
 	margin: auto;
 }
 
-.vacancySearch {
-	width: 50%;
+.inputsWrapper {
+	display: flex;
+	width: 75%;
+	justify-content: space-between;
+}
+
+.vacancySearch,
+.mobVacancySearch {
+	width: 68%;
 	height: 48px;
 	border: none;
 	border-radius: 8px;
@@ -21,11 +28,20 @@
 	color: #ffffff;
 }
 
+.mobVacancySearch {
+	display: none;
+}
+
+.mobVacancySearch:focus {
+	outline: none;
+}
+
 .vacancySearch:focus {
 	outline: none;
 }
 
-.vacancySearch::placeholder {
+.vacancySearch::placeholder,
+.mobVacancySearch::placeholder {
 	font-family: Montserrat;
 	font-size: 14px;
 	font-weight: 300;
@@ -34,7 +50,7 @@
 	opacity: 75%;
 }
 
-.vacancySearch:nth-child(2) {
+.vacancySearch:nth-child(3) {
 	width: 210px;
 	background-image: url(./assets/mapIcon.svg);
 }
@@ -59,8 +75,69 @@
 	border-radius: 8px;
 }
 
-.candidatesButton:hover{
-	cursor: pointer
+.candidatesButton:hover {
+	cursor: pointer;
 }
 
+@media screen and (max-width: 940px) {
+	.headerSearch {
+		display: inline;
+	}
+	.inputsWrapper {
+		width: 95%;
+		margin: 0 auto;
+		margin-bottom: 20px;
+	}
+	.vacancySearch:nth-child(1) {
+		width: 70%;
+	}
+	.vacancySearch:nth-child(2) {
+		width: 27%;
+	}
+	.candidatesButton {
+		margin: 0 auto;
+	}
+}
 
+@media screen and (max-width: 760px) {
+	.inputsWrapper {
+		flex-direction: column;
+	}
+	.vacancySearch:nth-child(1) {
+		width: 80%;
+		margin: 0 auto;
+	}
+	.vacancySearch:nth-child(3) {
+		width: 80%;
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+	.candidatesButton {
+		width: 76%;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.inputsWrapper {
+		flex-direction: column;
+	}
+	.mobVacancySearch:nth-child(2) {
+		display: inline;
+		width: 85%;
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+	.vacancySearch:nth-child(1) {
+		display: none;
+	}
+	.vacancySearch:nth-child(3) {
+		width: 85%;
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+	.candidatesButton {
+		width: 81%;
+		margin: 0 auto;
+	}
+}

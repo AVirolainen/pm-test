@@ -50,14 +50,57 @@
 	color: #eaeaea;
 }
 
-.optionItem{
-	color: black
+.optionItem {
+	color: black;
 }
 
 .selectItem:focus {
 	outline: none;
 }
 
-.enterButton{
+.enterButton {
 	text-decoration: underline;
+}
+
+.mobPositionSelection {
+	display: none;
+}
+
+.userNameBlock {
+	display: none;
+}
+
+@media screen and (max-width: 940px) {
+	.positionName {
+		display: none;
+	}
+	.enterButton {
+		display: none;
+	}
+	.mobPositionSelection {
+		display: inline-block;
+	}
+	.headerContainer {
+		margin-bottom: 0;
+	}
+	.selectItem:nth-child(1) {
+		width: 135px;
+	}
+	.userNameBlock {
+		margin: 20px 0 20px 0;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+	.userIcon {
+		background: url(./assets/userIcon.svg) no-repeat center;
+		width: 20px;
+		margin-right: 10px;
+	}
+}
+
+@media screen and (max-width: 760px) {
+	.headerComponent {
+		height: 300px;
+	}
 }

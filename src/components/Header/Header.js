@@ -1,8 +1,8 @@
 import styles from "./Header.module.css";
 import store from "../../App.js";
 import { useSelector } from "react-redux";
-import languageIcon from "./assets/languageIcon.svg"
-import HeaderSearch from "./HeaderSearch/HeaderSearch.js"
+import languageIcon from "./assets/languageIcon.svg";
+import HeaderSearch from "./HeaderSearch/HeaderSearch.js";
 
 const Header = () => {
 	const counter = useSelector((state) => state);
@@ -26,7 +26,23 @@ const Header = () => {
 					</div>
 					<div className={styles.enterButton}>Войти</div>
 				</div>
+				<div className={styles.mobPositionSelection}>
+					<select className={styles.selectItem}>
+						<option className={styles.optionItem}>
+							Соискатель
+						</option>
+						<option className={styles.optionItem}>
+							Работодатель
+						</option>
+						<option className={styles.optionItem}>HR</option>
+					</select>
+				</div>
 			</div>
+			<div className={styles.userNameBlock}>
+				<div className={styles.userIcon} />
+				<div className={styles.userName}>Юра Марченко</div>
+			</div>
+
 			<HeaderSearch />
 		</div>
 	);
