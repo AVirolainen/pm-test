@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import styles from "./App.module.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer.js";
+import ResumesList from "./components/ResumesList/ResumesList.js";
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 					<option>за месяц</option>
 					<option>за наделю</option>
 				</select>
+				<ResumesList />
 			</div>
 			{/* <Footer /> */}
 		</div>
