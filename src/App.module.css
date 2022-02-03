@@ -1,0 +1,46 @@
+.appComponent {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.bodyHeader {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 44px;
+	color: #202020;
+	margin-top: 80px;
+	width: 50%;
+	border-bottom: 1px solid #000046;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+}
+
+.resumesAmount {
+	color: #0096c7;
+	margin: 0 10px;
+}
+
+.bodyContainer {
+	width: 1235px;
+	margin: 0 auto;
+}
+
+.timeFilter {
+	width: 130px;
+	border: 0;
+	background: none;
+	font-family: "Montserrat", sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 24px;
+	color: #0096c7;
+}
+.timeFilter:focus {
+	outline: none;
+}
