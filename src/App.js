@@ -60,7 +60,7 @@ function App() {
 					</div>
 				</span>
 			</div>
-			{/* <Footer /> */}
+			<Footer />
 		</div>
 	);
 }

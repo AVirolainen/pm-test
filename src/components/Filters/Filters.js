@@ -2,6 +2,8 @@ import styles from "./Filters.module.css";
 import "antd/dist/antd.css";
 import { useState } from "react";
 import { Switch, Slider, InputNumber, Radio, Checkbox, Tree } from "antd";
+import { useSelector } from "react-redux";
+import store from "../../index.js"
 import engIcon from "./assets/engIcon.svg";
 import gerIcon from "./assets/gerIcon.svg";
 import polIcon from "./assets//polIcon.svg";
@@ -106,11 +108,26 @@ const treeData = [
 ];
 
 const Filters = () => {
-	const [isChecked, setIsChecked] = useState(true);
+	const isFiltering = useSelector((state) => state.isFiltering);
 	const [sliderValue, setSliderValue] = useState([18, 70]);
 	const [sliderPayValue, setSliderPayValue] = useState([5000, 50000]);
+	const handlePagination = () => {
+		let url = "http://135.181.30.244:27007/api/summaries/";
+		if(!store.getState().isFiltering){
+			url += "?photo=true"
+		}
+		const data = fetch(url)
+			.then((response) => {
+				return response.json();
+			})
+			.then((data) => {
+				store.dispatch({ type: "SET_VACANCIES", payload: data });
+			});
+	};
+
 	const handleSwitchChange = () => {
-		setIsChecked(!isChecked);
+		handlePagination()
+		store.dispatch({type: "SET_FILTER"})
 	};
 
 	const handleSlider = (value) => {
@@ -128,7 +145,7 @@ const Filters = () => {
 				<div className={styles.filterText}>Только с фотографией</div>
 				<Switch
 					size="small"
-					checked={isChecked}
+					checked={isFiltering}
 					onChange={handleSwitchChange}
 				/>
 			</div>

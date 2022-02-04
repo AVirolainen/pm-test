@@ -11,7 +11,9 @@
 	width: 160px;
 	height: 160px;
 	border-radius: 80px;
-	border: 1px solid #eaeaea
+	border: 1px solid #eaeaea;
+	object-fit: cover;
+
 }
 
 .avatarBlock {

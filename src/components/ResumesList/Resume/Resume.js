@@ -10,29 +10,33 @@ const content = (
 	</div>
 );
 
-const Resume = () => {
+const Resume = (props) => {
+	const info = props.info
 	return (
 		<div className={styles.resumeComponent}>
 			<span className={styles.avatarBlock}>
-				{/* <Avatar size={150} icon={<UserOutlined />} /> */}
-				<div className={styles.avatar}></div>
+				{info.photo ? 
+				<div className={styles.avatar}>
+					<img src={info.photo} className={styles.avatar}/>
+				</div> :
+				<div className={styles.avatar}></div>}
 			</span>
 			<div className={styles.infoBlock}>
-				<div className={styles.position}>Продавец-консультант</div>
+				<div className={styles.position}>{info.desiredposition[0].position.split(",")[0] || "Boss"}</div>
 				<div className={styles.personalInfo}>
-					<div className={styles.name}>Дмитрий, 23 года</div>
+					<div className={styles.name}>{info.first_name || "Dmitry" }, 23 года</div>
 					<div className={styles.city}>
-						<div className={styles.gioIcon} />
-						Kiev, Ukraine
+						{info.phone_number}
 					</div>
 				</div>
 				<div className={styles.experience}>
+					{info.workexperience.slice(0, 2).map(item => {
+						return (
 					<div className={styles.experienceItem}>
-						Координатор BALOX Agency - 4 мес.
+						{item.company_name}{"-"}{item.position}
 					</div>
-					<div className={styles.experienceItem}>
-						Оператор кол центра в DELTA - 11 мес.
-					</div>
+					)
+					})}
 				</div>
 				<div className={styles.status}>
 					<div className={styles.timeAgo}>

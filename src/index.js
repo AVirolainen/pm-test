@@ -12,10 +12,10 @@ let store = createStore(vacancies);
 fetch("http://135.181.30.244:27007/api/summaries/")
 	.then((response) => {
 		return response.json();
-	}).then((data)=> {
-		store.dispatch({type: "SET_VACANCIES", payload:data})
 	})
-
+	.then((data) => {
+		store.dispatch({ type: "SET_VACANCIES", payload: data });
+	});
 
 ReactDOM.render(
 	<Provider store={store}>
@@ -26,4 +26,5 @@ ReactDOM.render(
 	document.getElementById("root")
 );
 
+export default store
 reportWebVitals();
