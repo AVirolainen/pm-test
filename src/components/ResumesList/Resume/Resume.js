@@ -1,14 +1,22 @@
 import "antd/dist/antd.css";
 import styles from "./Resume.module.css";
-import { Avatar } from "antd";
-import { UserOutlined } from "@ant-design/icons";
+import { Avatar, Popover } from "antd";
+import { UserOutlined, HeartOutlined, MoreOutlined } from "@ant-design/icons";
+
+const content = (
+	<div>
+		<p style={{cursor: "pointer"}}>Пожаловаться</p>
+		<p style={{cursor: "pointer"}}>Скрыть кандидата</p>
+	</div>
+);
 
 const Resume = () => {
 	return (
 		<div className={styles.resumeComponent}>
-			<div className={styles.avatarBlock}>
-				<Avatar size={170} icon={<UserOutlined />} />
-			</div>
+			<span className={styles.avatarBlock}>
+				{/* <Avatar size={150} icon={<UserOutlined />} /> */}
+				<div className={styles.avatar}></div>
+			</span>
 			<div className={styles.infoBlock}>
 				<div className={styles.position}>Продавец-консультант</div>
 				<div className={styles.personalInfo}>
@@ -36,7 +44,22 @@ const Resume = () => {
 					</div>
 				</div>
 			</div>
-			<div className={styles.buttonsBlock}></div>
+			<div className={styles.buttonsBlock}>
+				<div className={styles.buttonsWrapper}>
+					<div className={styles.button}>
+						<HeartOutlined
+							style={{ fontSize: "30px", color: "#F42C3C" }}
+						/>
+					</div>
+					<Popover content={content} trigger="click" placement="left">
+					<div className={styles.button}>
+						<MoreOutlined
+							style={{ fontSize: "30px", color: "#0096C7" }}
+						/>
+					</div>
+					</Popover>
+				</div>
+			</div>
 		</div>
 	);
 };

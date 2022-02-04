@@ -18,11 +18,11 @@ function App() {
 				<select className={styles.timeFilter}>
 					<option>за все время</option>
 					<option>за месяц</option>
-					<option>за наделю</option>
+					<option>за неделю</option>
 				</select>
 				<ResumesList />
 			</div>
-			{/* <Footer /> */}
+			<Footer />
 		</div>
 	);
 }

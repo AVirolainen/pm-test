@@ -2,3 +2,9 @@
 	margin-top: 45px;
 	width: 836px;
 }
+
+@media screen and (max-width: 1235px) {
+	.resumesListComponent{
+		width: 100%
+	}
+}
