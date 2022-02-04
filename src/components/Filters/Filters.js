@@ -1,7 +1,109 @@
 import styles from "./Filters.module.css";
 import "antd/dist/antd.css";
 import { useState } from "react";
-import { Switch, Slider, InputNumber, Radio, Checkbox } from "antd";
+import { Switch, Slider, InputNumber, Radio, Checkbox, Tree } from "antd";
+import engIcon from "./assets/engIcon.svg";
+import gerIcon from "./assets/gerIcon.svg";
+import polIcon from "./assets//polIcon.svg";
+import rusIcon from "./assets/rusIcon.svg";
+import ukrIcon from "./assets/ukrIcon.svg";
+import spainIcon from "./assets/spainIcon.svg";
+
+const level = [
+	{
+		title: <span>(A1) - начальный</span>,
+		key: "0-0-0",
+		children: [],
+	},
+	{
+		title: <span>(A2) - ниже среднего</span>,
+		key: "0-0-1",
+		children: [],
+	},
+	{
+		title: <span>(B1) - средний</span>,
+		key: "0-0-2",
+		children: [],
+	},
+	{
+		title: <span>(В2) - выше среднего</span>,
+		key: "0-0-3",
+		children: [],
+	},
+	{
+		title: <span>(С1) -продвинутый</span>,
+		key: "0-0-4",
+		children: [],
+	},
+	{
+		title: <span>(С2) - профессиональный уровень владения</span>,
+		key: "0-0-5",
+		children: [],
+	},
+];
+
+const treeData = [
+	{
+		title: (
+			<span>
+				<img src={engIcon} className={styles.treeIcon} />
+				Английский
+			</span>
+		),
+		key: "0-0",
+		children: level,
+	},
+	{
+		title: (
+			<span>
+				<img src={gerIcon} className={styles.treeIcon} />
+				Немецкий
+			</span>
+		),
+		key: "0-1",
+		children: level,
+	},
+	{
+		title: (
+			<span>
+				<img src={polIcon} className={styles.treeIcon} />
+				Польский
+			</span>
+		),
+		key: "0-2",
+		children: level,
+	},
+	{
+		title: (
+			<span>
+				<img src={spainIcon} className={styles.treeIcon} />
+				Испанский
+			</span>
+		),
+		key: "0-3",
+		children: level,
+	},
+	{
+		title: (
+			<span>
+				<img src={rusIcon} className={styles.treeIcon} />
+				Русский
+			</span>
+		),
+		key: "0-4",
+		children: level,
+	},
+	{
+		title: (
+			<span>
+				<img src={ukrIcon} className={styles.treeIcon} />
+				Украинский
+			</span>
+		),
+		key: "0-5",
+		children: level,
+	},
+];
 
 const Filters = () => {
 	const [isChecked, setIsChecked] = useState(true);
@@ -153,10 +255,49 @@ const Filters = () => {
 					<div>236</div>
 				</div>
 				<div className={styles.filterWrapper}>
-					<div className={styles.filterStudent}>
-						Только студенты
-					</div>
+					<div className={styles.filterStudent}>Только студенты</div>
 					<Switch size="small" />
+				</div>
+			</div>
+
+			<div className={styles.filterBox}>
+				<div className={styles.filterInnerText}>Владение языками</div>
+				<Tree checkable treeData={treeData} />
+			</div>
+
+			<div className={styles.filterBox}>
+				<div className={styles.filterInnerText}>Тип занятости</div>
+				<div className={styles.experienceWrapper}>
+					<Checkbox>Полная занятость</Checkbox>
+					<div>34567</div>
+				</div>
+				<div className={styles.experienceWrapper}>
+					<Checkbox>Неполная занятость</Checkbox>
+					<div>876</div>
+				</div>
+				<div className={styles.experienceWrapper}>
+					<Checkbox>Удаленная работа</Checkbox>
+					<div>1234</div>
+				</div>
+			</div>
+
+			<div className={styles.filterBox}>
+				<div className={styles.filterInnerText}>Образование</div>
+				<div className={styles.experienceWrapper}>
+					<Checkbox>Высшее</Checkbox>
+					<div>34567</div>
+				</div>
+				<div className={styles.experienceWrapper}>
+					<Checkbox>Неоконченное высшее</Checkbox>
+					<div>876</div>
+				</div>
+				<div className={styles.experienceWrapper}>
+					<Checkbox>Средне-специальное</Checkbox>
+					<div>1234</div>
+				</div>
+				<div className={styles.experienceWrapper}>
+					<Checkbox>Средне</Checkbox>
+					<div>885</div>
 				</div>
 			</div>
 		</div>

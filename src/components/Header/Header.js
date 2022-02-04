@@ -1,12 +1,9 @@
 import styles from "./Header.module.css";
 import store from "../../App.js";
-import { useSelector } from "react-redux";
 import languageIcon from "./assets/languageIcon.svg";
 import HeaderSearch from "./HeaderSearch/HeaderSearch.js";
 
 const Header = () => {
-	const counter = useSelector((state) => state);
-	console.log(counter);
 	return (
 		<div className={styles.headerComponent}>
 			<div className={styles.headerContainer}>

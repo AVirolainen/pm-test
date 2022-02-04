@@ -27,6 +27,7 @@
 
 .bodyContainer {
 	width: 1235px;
+	position: relative;
 	margin: 0 auto;
 }
 
@@ -45,18 +46,40 @@
 	outline: none;
 }
 
-.bodyWrapper{
+.bodyWrapper {
 	width: 100%;
 	display: flex;
 }
 
+.hamburgerButton {
+	height: 50px;
+	width: 50px;
+	border-radius: 8px;
+	background: #f4f6fc;
+	display: none;
+}
+
 @media screen and (max-width: 1235px) {
-	.bodyContainer{
+	.bodyContainer {
 		width: 100%;
-		padding: 10px
+		padding: 10px;
 	}
-	.bodyHeader{
+	.bodyHeader {
 		width: 100%;
-		text-align: center
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 1120px) {
+	.hamburgerButton {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		right: 10px;
+		margin-top: -25px
+	}
+	.filterWrapper{
+		display: none
 	}
 }

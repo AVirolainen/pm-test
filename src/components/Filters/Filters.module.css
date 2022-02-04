@@ -20,7 +20,8 @@
 	padding: 15px 30px;
 }
 
-.filterText, .filterStudent {
+.filterText,
+.filterStudent {
 	background: url(./assets/photoIcon.svg);
 	background-repeat: no-repeat;
 	padding-left: 25px;
@@ -36,26 +37,40 @@
 	line-height: 28px;
 	margin-bottom: 15px;
 	padding-bottom: 15px;
-	border-bottom: 0.5px solid #EAEAEA;
+	border-bottom: 0.5px solid #eaeaea;
 }
 
-.inputsWrapper{
-	margin-top: 35px
+.inputsWrapper {
+	margin-top: 35px;
 }
 
-.filterWrapper{
+.filterWrapper {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 35px;
 }
 
-.experienceWrapper{
+.experienceWrapper {
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 25px;
 }
 
-.filterStudent{
+.filterStudent {
 	background: url(./assets/studentIcon.svg);
 	background-repeat: no-repeat;
+}
+
+.treeIcon {
+	margin-right: 15px;
+}
+
+@media screen and (max-width: 1120px) {
+	.filtersComponent {
+		margin-top: 0;
+		width: 100%;
+	}
+	.filtersHeader {
+		display: none
+	}
 }
