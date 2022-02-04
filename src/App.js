@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer.js";
 import ResumesList from "./components/ResumesList/ResumesList.js";
+import Filters from "./components/Filters/Filters.js"
 
 function App() {
 	return (
@@ -20,9 +21,12 @@ function App() {
 					<option>за месяц</option>
 					<option>за неделю</option>
 				</select>
-				<ResumesList />
+				<div className={styles.bodyWrapper}>
+					<ResumesList />
+					<Filters />
+				</div>
 			</div>
-			<Footer />
+			{/* <Footer /> */}
 		</div>
 	);
 }

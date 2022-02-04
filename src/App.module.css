@@ -45,6 +45,11 @@
 	outline: none;
 }
 
+.bodyWrapper{
+	width: 100%;
+	display: flex;
+}
+
 @media screen and (max-width: 1235px) {
 	.bodyContainer{
 		width: 100%;
